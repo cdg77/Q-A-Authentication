@@ -1,7 +1,7 @@
 <h3><%= @question.author %> ask's: <br> <%= @question.title %></h3>
 <h3>Answers:</h3>
 <% @question.answers.each do |answer| %>
-<h4><%= answer.text %> | by: <%= answer.user %></h4>
+<h4><%= answer.text %> | by: <%= answer.user %> | <%= link_to "Delete A", question_answer_path(@question, answer), method: :delete %></h4>
 <% end %>
 
 <hr>

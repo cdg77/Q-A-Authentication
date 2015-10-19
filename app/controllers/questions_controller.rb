@@ -26,4 +26,8 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  private
+  def question_params
+    params.require(:question).permit(:author, :title)
+  end
 end
