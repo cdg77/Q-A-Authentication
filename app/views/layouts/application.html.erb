@@ -9,10 +9,12 @@
 <body>
 
   <div class="container">
+    <div class="header">
+      <h3><%= link_to "Sign Up", new_user_path %></h3>
+    </div>
     <%= yield %>
+    <br>
+    <h2><%= flash[:notice] %></h2>
   </div>
-  <br>
-  <h2><%= flash[:notice] %></h2>
-
 </body>
 </html>
