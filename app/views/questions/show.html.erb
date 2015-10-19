@@ -1,0 +1,10 @@
+<h3><%= @question.author %> ask's: <br> <%= @question.title %></h3>
+<h3>Answers:</h3>
+<% @question.answers.each do |answer| %>
+<h4><%= answer.text %> | by: <%= answer.user %></h4>
+<% end %>
+
+<hr>
+<h3><%= link_to "Delete a Q", question_path(@question), method: :delete %></h3>
+<h3><%= link_to "Add an A", new_question_answer_path(@question) %></h3>
+<h4><%= link_to "Go back to List of Q's", questions_path %></h4>
