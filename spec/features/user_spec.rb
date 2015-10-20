@@ -22,3 +22,11 @@ describe 'adding a user process' do
     expect(page).to have_content "You have these errors:"
   end
 end
+
+describe 'log in process' do
+  it "logs a user into the app" do
+    user = FactoryGirl.create(:user)
+    log_in(user)
+    expect(page).to have_content 'Logged in!'
+  end
+end
