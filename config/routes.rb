@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :answers
   end
   resources :users
+  resources :sessions
 end

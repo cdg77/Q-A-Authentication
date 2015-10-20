@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QAAuthentication</title>
+  <title>Q & A</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <div class="container">
-    <div class="header">
-      <h3><%= link_to "Sign Up", new_user_path %></h3>
-    </div>
+    <nav class="navbar navbar-default">
+      <h1>Q & A</h1>
+        <p><%= link_to "Home", questions_path %></p>
+        <div class="sign-in">
+          <h5><%= link_to "Sign Up", new_user_path %> |
+          <%= link_to "Log In", new_session_path %></h5>
+        </div>
+        <%= yield(:nav) %>
+    </nav>
+
     <%= yield %>
     <br>
     <h2><%= flash[:notice] %></h2>
+    <h2><%= flash[:alert] %></h2>
   </div>
 </body>
 </html>

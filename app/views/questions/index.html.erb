@@ -1,5 +1,5 @@
-<h2>Q & A </h2>
-<br>
+<% content_for(:nav) do %>
+<% end %>
 <% @questions.each do |question| %>
 <h4><%= link_to question.title, question_path(question) %><hr></h4>
 <% end %>
