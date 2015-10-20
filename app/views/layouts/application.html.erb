@@ -12,8 +12,14 @@
       <h1>Q & A</h1>
         <p><%= link_to "Home", questions_path %></p>
         <div class="sign-in">
-          <h5><%= link_to "Sign Up", new_user_path %> |
-          <%= link_to "Log In", new_session_path %></h5>
+          <% if current_user %>
+            logged in as <%= current_user.first_name %>
+          <% else %>
+            <h5>
+              <%= link_to "Sign Up", new_user_path %> |
+              <%= link_to "Log In", new_session_path %>
+            </h5>
+          <% end %>
         </div>
         <%= yield(:nav) %>
     </nav>
