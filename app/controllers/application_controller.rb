@@ -11,7 +11,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    flash[:alert] = 'Not Authorized' if current_user.nil?
-    redirect_to new_user_path
+    if current_user.nil?
+      flash[:alert] = 'Not Authorized'
+      redirect_to new_user_path
+    end
+
   end
 end
